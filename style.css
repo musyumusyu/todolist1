@@ -1,0 +1,228 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f3f4f6;
+  padding: 20px;
+  color: #111827;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* 入力エリア */
+.input-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+/* タスク入力欄をやや短く */
+#new-task {
+  width: 55%; /* ← 横に60%程度の幅に縮小（確実に変化） */
+  min-width: 180px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* 日付欄もバランス調整 */
+#deadline {
+  width: 30%; /* ← 約60%の比率に縮小 */
+  min-width: 130px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+#add-btn {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 0.95em;
+  white-space: nowrap;
+}
+
+#add-btn:hover {
+  background-color: #2563eb;
+}
+
+/* オプションボタン */
+.options {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.options button {
+  margin-left: 8px;
+  background-color: #6b7280;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+#delete-selected {
+  background-color: #ef4444;
+}
+#delete-selected:hover {
+  background-color: #dc2626;
+}
+#complete-selected {
+  background-color: #10b981;
+}
+#complete-selected:hover {
+  background-color: #059669;
+}
+
+/* タスクリスト */
+ul {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: 0 auto 20px auto;
+}
+
+li {
+  background: white;
+  margin: 6px 0;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.task-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.task-text {
+  font-size: 1.1em;
+  word-break: break-all;
+}
+
+.task-check {
+  width: 18px;
+  height: 18px;
+}
+
+.task-select {
+  margin-right: 8px;
+}
+
+li.done .task-text {
+  text-decoration: line-through;
+  color: #6b7280;
+}
+
+li.pinned {
+  border-left: 4px solid #facc15;
+}
+
+.deadline {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.9em;
+}
+
+.overdue { color: #ef4444; }
+.urgent { color: #f59e0b; }
+.normal { color: #10b981; }
+.done-deadline { color: #6b7280; }
+
+/* カレンダー */
+#calendar {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+/* 今日の日付を強調 */
+.fc-day-today {
+  background: #dbeafe !important;
+}
+
+/* 日付文字 */
+.fc .fc-daygrid-day-number {
+  color: #111827 !important;
+}
+
+/* モーダル共通 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background: #fff;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.close {
+  float: right;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* 編集モーダル */
+#edit-task {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  resize: vertical;
+  min-height: 80px;
+  font-size: 1em;
+  margin-bottom: 8px;
+}
+
+#edit-deadline {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin-bottom: 14px; /* ← ボタンとの間隔を少し広げた */
+}
+
+/* 保存ボタン */
+#save-edit {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1em;
+}
+
+#save-edit:hover {
+  background-color: #1d4ed8;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ToDoリスト＋カレンダー</title>
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>📅 ToDoリスト</h1>
+
+  <div class="input-area">
+    <input id="new-task" type="text" placeholder="新しいタスクを入力" />
+    <input id="deadline" type="datetime-local" />
+    <button id="add-btn">追加</button>
+  </div>
+
+  <div class="options">
+    <label><input type="checkbox" id="move-toggle" checked /> 完了済みを下に移動</label>
+    <label><input type="checkbox" id="hide-toggle" /> 完了済みを非表示</label>
+    <button id="complete-selected">選択を完了にする</button>
+    <button id="delete-selected">選択を削除</button>
+  </div>
+
+  <ul id="task-list"></ul>
+
+  <div id="calendar"></div>
+
+  <!-- 詳細モーダル -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="close-modal" class="close">&times;</span>
+      <h2 id="modal-title"></h2>
+      <p id="modal-deadline"></p>
+      <p id="modal-remaining"></p>
+    </div>
+  </div>
+
+  <!-- 編集モーダル -->
+  <div id="edit-modal" class="modal">
+    <div class="modal-content">
+      <span id="close-edit" class="close">&times;</span>
+      <h2>タスクを編集</h2>
+      <textarea id="edit-task" rows="3"></textarea>
+      <input id="edit-deadline" type="datetime-local" />
+      <button id="save-edit">保存</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
